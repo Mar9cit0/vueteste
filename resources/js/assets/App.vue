@@ -20,7 +20,11 @@
                             <router-link :to="{ name: 'lista' }">Tarefa</router-link>
                         </li>
                         <li v-if="this.$store.state.isLoggedIn">
-                            <a href="#"  @click="logout()">Fechar sessão</a>
+                            <a href="#"  @click="logout()">Fechar ssessão</a>
+                            <router-link :to="{ name: 'logout' }">cerrar</router-link>
+                        </li>
+                         <li v-if="this.$store.state.isLoggedIn">                            
+                           <router-link :to="{ name: 'lista' }">Tarefa</router-link>
                         </li>
                         
                     </ul>

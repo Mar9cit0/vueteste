@@ -4041,20 +4041,40 @@ var render = function() {
                 : _vm._e(),
               _vm._v(" "),
               this.$store.state.isLoggedIn
-                ? _c("li", [
-                    _c(
-                      "a",
-                      {
-                        attrs: { href: "#" },
-                        on: {
-                          click: function($event) {
-                            return _vm.logout()
+                ? _c(
+                    "li",
+                    [
+                      _c(
+                        "a",
+                        {
+                          attrs: { href: "#" },
+                          on: {
+                            click: function($event) {
+                              return _vm.logout()
+                            }
                           }
-                        }
-                      },
-                      [_vm._v("Fechar sessão")]
-                    )
-                  ])
+                        },
+                        [_vm._v("Fechar ssessão")]
+                      ),
+                      _vm._v(" "),
+                      _c("router-link", { attrs: { to: { name: "logout" } } }, [
+                        _vm._v("cerrar")
+                      ])
+                    ],
+                    1
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              this.$store.state.isLoggedIn
+                ? _c(
+                    "li",
+                    [
+                      _c("router-link", { attrs: { to: { name: "lista" } } }, [
+                        _vm._v("Tarefa")
+                      ])
+                    ],
+                    1
+                  )
                 : _vm._e()
             ])
           ])
@@ -4409,7 +4429,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("tr", [
       _c("td", { attrs: { colspan: "4", align: "center" } }, [
-        _vm._v("Não se encontrou tarefa.")
+        _vm._v("Não se eeeeeencontrou tarefa.")
       ])
     ])
   }
