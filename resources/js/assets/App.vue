@@ -20,12 +20,9 @@
                             <router-link :to="{ name: 'lista' }">Tarefa</router-link>
                         </li>
                         <li v-if="this.$store.state.isLoggedIn">
-                            <a href="#"  @click="logout()">Fechar ssessão</a>
-                            <router-link :to="{ name: 'logout' }">cerrar</router-link>
+                            <a href="#"  @click="logout()">Fechar sessão</a>
                         </li>
-                         <li v-if="this.$store.state.isLoggedIn">                            
-                           <router-link :to="{ name: 'lista' }">Tarefa</router-link>
-                        </li>
+                       
                         
                     </ul>
                 </div>
@@ -37,3 +34,24 @@
      
     </div>
 </template>
+<script>
+export default {
+
+   methods: {
+     logout(evt) {
+       if(confirm("Deseja fechar a sessão?")) {
+         axios.get('api/auth/logout').then(response => {
+          localStorage.removeItem('auth_token');
+          delete axios.defaults.headers.common['Authorization'];
+          this.$router.go('/login');
+        })
+        .catch(error => {
+          localStorage.removeItem('auth_token');
+          delete axios.defaults.headers.common['Authorization'];
+          this.$router.go('/login');
+        });       
+       }
+     }
+   }
+}
+</script>

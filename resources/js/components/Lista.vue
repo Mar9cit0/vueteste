@@ -32,7 +32,7 @@
                             </tbody>
                             <tbody v-else>
                                 <tr>
-                                    <td colspan="4" align="center">Não se eeeeeencontrou tarefa.</td>
+                                    <td colspan="4" align="center">Não se encontrou tarefa.</td>
                                 </tr>
                             </tbody>
                         </table>
