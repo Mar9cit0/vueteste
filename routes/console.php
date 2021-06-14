@@ -17,3 +17,14 @@ use Illuminate\Support\Facades\Artisan;
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');
+
+Artisan::command('make:user', function () {
+
+    $email    = $this->ask('Email');
+    $password = $this->secret('Senha');
+    
+    App\User::create(['email' => $email, 'password' => bcrypt($password)]);
+    
+    $this->info('Usuário criado com sucesso!');
+    
+})->describe('Cria usuário');
